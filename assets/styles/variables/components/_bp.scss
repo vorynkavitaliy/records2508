@@ -1,0 +1,11 @@
+$min-width: 320px;
+$max-width: 1440;
+$max-width-container: 1400;
+
+$ld: 1439.98px;
+$lmd: 1023.98px;
+$md: 767.98px;
+$smd: 575.98px;
+$sd: 479.98px;
+
+$dw: (sd: $sd, smd: $smd, md: $md, lmd: $lmd, ld: $ld);

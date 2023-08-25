@@ -1,0 +1,30 @@
+.socials {
+    &-links {
+        @include screen($sd, 'max') {
+            flex-direction: column;
+        }
+    }
+
+    &-link {
+        @include screen($sd, 'max') {
+            &:not(:last-child) {
+                margin: 0px 0px 20px;
+            }
+        }
+
+        @include screen($sd) {
+            margin: 0px 12px;
+        }
+
+        &--icon {
+            margin-right: 12px;
+            width: 28px;
+            height: 28px;
+
+            @include screen($sd) {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+}

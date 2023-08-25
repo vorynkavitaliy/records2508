@@ -1,0 +1,98 @@
+$margin: (m: margin, mt: margin-top, mb: margin-bottom, mr: margin-right, ml: margin-left)
+$mhv: (my, mx)
+$padding: (p: padding, pt: padding-top, pb: padding-bottom, pr: padding-right, pl: padding-left)
+$phv: (py, px)
+$cicle-number: 24
+
+@function offset-number($i)
+    @return math.div(($i * 2.5), 10) * 1rem
+
+@each $class, $type in $margin
+    .#{$class}
+        @for $i from 0 through $cicle-number
+            &-#{$i}
+                #{$type}: +offset-number($i)
+
+        @each $device, $width in $dw
+            @for $i from 0 through $cicle-number
+                &-#{$device}-#{$i}
+                    +screen($width)
+                        #{$type}: +offset-number($i)
+
+@each $class, $type in $padding
+    .#{$class}
+        @for $i from 0 through $cicle-number
+            &-#{$i}
+                #{$type}: +offset-number($i)
+
+        @each $device, $width in $dw
+            @for $i from 0 through $cicle-number
+                &-#{$device}-#{$i}
+                    +screen($width)
+                        #{$type}: +offset-number($i)
+
+@each $class, $type in $margin
+    .#{$class}
+        &-auto
+            #{$type}: auto
+
+        @each $device, $width in $dw
+            &-#{$device}-auto
+                +screen($width)
+                    #{$type}: auto
+
+@each $class, $type in $mhv
+    .#{$class}
+        &-auto
+            margin-left: auto
+            margin-right: auto
+
+        @each $device, $width in $dw
+            &-#{$device}-auto
+                +screen($width)
+                    margin-left: auto
+                    margin-right: auto
+
+@each $class, $type in $mhv
+    .#{$class}
+        @for $i from 0 through $cicle-number
+            &-#{$i}
+                @if $class == 'mx'
+                    margin-left: +offset-number($i)
+                    margin-right: +offset-number($i)
+                @else
+                    margin-top: +offset-number($i)
+                    margin-bottom: +offset-number($i)
+
+        @each $device, $width in $dw
+            @for $i from 0 through $cicle-number
+                &-#{$device}-#{$i}
+                    +screen($width)
+                        @if $class == 'mx'
+                            margin-left: +offset-number($i)
+                            margin-right: +offset-number($i)
+                        @else
+                            margin-top: +offset-number($i)
+                            margin-bottom: +offset-number($i)
+
+@each $class, $type in $phv
+    .#{$class}
+        @for $i from 0 through $cicle-number
+            &-#{$i}
+                @if $class == 'px'
+                    padding-right: +offset-number($i)
+                    padding-left: +offset-number($i)
+                @else
+                    padding-top: +offset-number($i)
+                    padding-bottom: +offset-number($i)
+
+        @each $device, $width in $dw
+            @for $i from 0 through $cicle-number
+                &-#{$device}-#{$i}
+                    +screen($width)
+                        @if $class == 'px'
+                            padding-right: +offset-number($i)
+                            padding-left: +offset-number($i)
+                        @else
+                            padding-top: +offset-number($i)
+                            padding-bottom: +offset-number($i)

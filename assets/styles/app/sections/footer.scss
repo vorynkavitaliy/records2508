@@ -1,0 +1,19 @@
+.app-footer {
+    background-color: $primary;
+
+    .wrapper {
+        padding: 40px 0px;
+    }
+
+    .footer {
+        &-logo {
+            max-width: 114px;
+            margin-bottom: 20px;
+        }
+
+        &-text {
+            color: $secondary;
+            font-size: 16px;
+        }
+    }
+}
