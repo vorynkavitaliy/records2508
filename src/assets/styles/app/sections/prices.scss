@@ -1,0 +1,22 @@
+.prices {
+    &-list {
+        max-width: 400px;
+        margin: 0 auto 48px;
+    }
+
+    &-item {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        .app-subtext {
+            text-align: left;
+            margin: 0;
+        }
+    }
+
+    &-price {
+        flex: 0 0 auto;
+        margin-left: 6px;
+    }
+}

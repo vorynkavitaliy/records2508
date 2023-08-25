@@ -1,0 +1,51 @@
+.banner {
+    &-inner {
+        margin-top: 44px;
+
+        @include screen($md) {
+            margin-top: 84px;
+        }
+    }
+
+    &-logo {
+        margin-bottom: 64px;
+
+        @include screen($md, 'max') {
+            position: relative;
+            width: 340px;
+            height: 437px;
+            margin-bottom: 87px;
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 96%;
+            }
+        }
+
+        @include screen($smd, 'max') {
+            width: 270px;
+            height: 347px;
+            margin-bottom: 24px;
+        }
+    }
+
+    .app-subtext {
+        margin-bottom: 73px;
+
+        @include screen($smd, 'max') {
+            margin-bottom: 24px;
+        }
+    }
+
+    &-logo-symbols {
+        width: 360px;
+        height: 460px;
+
+        &.right {
+            transform: rotate(180deg);
+        }
+    }
+}

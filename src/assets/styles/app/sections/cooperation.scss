@@ -1,0 +1,19 @@
+.cooperation {
+    &-hands {
+        display: block;
+        margin: auto;
+        width: 160px;
+        height: 160px;
+
+        @include screen($md) {
+            width: 235px;
+            height: 235px;
+        }
+    }
+
+    &-actions {
+        @include screen($smd, 'max') {
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@mixin screen($dw, $type: 'min') {
+  @media screen and (#{$type}-width: $dw) {
+    @content;
+  }
+}
+@mixin screenBetween($dw-min, $dw-max) {
+  @media screen and (min-width: $dw-min) and (max-width: $dw-max) {
+    @content;
+  }
+}
+
+@mixin onlyHover() {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}

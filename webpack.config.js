@@ -137,7 +137,7 @@ const jsLoaders = () => {
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    mode: 'development',
+    mode: process.env.NODE_ENV,
     entry: {
         index: ['@babel/polyfill', './index.js'],
     },
